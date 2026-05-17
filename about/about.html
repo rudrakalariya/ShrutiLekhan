@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ShrutiLekhan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Hind+Vadodara:wght@400;600;700&family=Baloo+Bhai+2:wght@600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --font-en: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+    </style>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="background-container"></div>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">શ્રુતિલેખન</h1>
+            <div class="logo-subtext">Speech-to-Text<br>for Gujarati</div>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../api/api.html">API</a>
+            <a href="../about/about.html" class="active">About</a>
+        </nav>
+    </header>
+
+    <main class="main-content" style="flex-direction: column;">
+        <div class="doc-card">
+            <h2 class="doc-title">About the Project</h2>
+            <p class="doc-text">
+                <strong>ShrutiLekhan</strong> is an advanced, is a highly optimized Gujarati Automatic Speech
+                Recognition (ASR) system designed to accurately transcribe complex regional audio. It utilizes a
+                fine-tuned Whisper sequence-to-sequence model, specifically adapted to map the nuanced phonetics of the
+                Gujarati language into accurate text.
+            </p>
+            <p class="doc-text">
+                This project addresses the unique linguistic challenges of Indic scripts, specifically focusing on the
+                complexities of Matras, Anusvaras, and Unicode standardization in machine learning evaluation.
+            </p>
+
+            <p class="doc-text">The system features:</p>
+            <ul class="doc-list" style="margin-bottom: 2rem;">
+                <li>A fine-tuned acoustic model achieving an exceptional 0.09 validation loss and a highly precise
+                    10.03% Character Error Rate (CER) on the crowdsourced Vistaar Kathbath dataset.</li>
+                <li>An automated text-normalization pipeline leveraging IndicNLP to autonomously resolve Unicode
+                    mismatches, strip formatting artifacts, and standardize complex spelling variations.</li>
+                <li>A high-throughput cloud inference pipeline utilizing 16-bit precision (fp16) and batched processing
+                    to accelerate large-scale dataset benchmarking.</li>
+                <li>A detailed analytical framework that highlights the limitations of standard Word Error Rate (WER)
+                    metrics for agglutinative Indic languages and establishes CER as a more accurate reflection of
+                    acoustic mapping.</li>
+            </ul>
+
+            <h3 class="doc-section-title" style="margin-top: 2rem;">GitHub Repository</h3>
+            <p class="doc-text">
+                <a href="https://github.com/rudrakalariya/ShrutiLekhan-Gujarati-ASR"
+                    class="doc-link">github.com/rudrakalariya/ShrutiLekhan-Gujarati-ASR</a>
+            </p>
+
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p><strong>શ્રુતિલેખન</strong> - Gujarati Speech-to-Text</p>
+        <p class="copyright">&copy; 2026 ShrutiLekhan. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

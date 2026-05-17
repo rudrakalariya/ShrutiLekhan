@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API - ShrutiLekhan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Hind+Vadodara:wght@400;600;700&family=Baloo+Bhai+2:wght@600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --font-en: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+    </style>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="background-container"></div>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">શ્રુતિલેખન</h1>
+            <div class="logo-subtext">Speech-to-Text<br>for Gujarati</div>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../api/api.html" class="active">API</a>
+            <a href="../about/about.html">About</a>
+        </nav>
+    </header>
+
+    <main class="main-content" style="flex-direction: column;">
+        <!-- Card 1: Overview -->
+        <div class="doc-card">
+            <h2 class="doc-title">ShrutiLekhan API Documentation</h2>
+            <p class="doc-text">
+                The ShrutiLekhan API allows you to integrate high-accuracy Gujarati Speech-to-Text capabilities directly
+                into your own applications. This page outlines the available endpoints, request formats, and provides
+                usage examples.
+            </p>
+
+            <div class="doc-grid">
+                <div class="doc-info-block">
+                    <h4>Base URL</h4>
+                    <p>https://rudrakalariya-shrutilekhan-backend.hf.space</p>
+                </div>
+                <div class="doc-info-block">
+                    <h4>Authentication</h4>
+                    <p>No authentication required(beta).Please use responsibly.</p>
+                </div>
+                <div class="doc-info-block">
+                    <h4>Content Type</h4>
+                    <p>multipart/form-data</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Endpoints -->
+        <div class="doc-card">
+            <h3 class="doc-section-title">Endpoints</h3>
+            <ul class="doc-list">
+                <li><span class="doc-method">POST</span> <span class="doc-endpoint">/transcribe</span> - Upload an audio
+                    file for transcription</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: POST /transcribe Details -->
+        <div class="doc-card">
+            <div style="display: flex; align-items: center;">
+                <h3 class="doc-section-title" style="margin-bottom: 0;">POST /transcribe</h3>
+                <span class="beta-badge">Beta</span>
+            </div>
+
+            <p class="doc-text" style="margin-top: 1rem;">
+                Sends an audio file to the ShrutiLekhan model and returns the transcribed Gujarati text.
+            </p>
+
+            <h4 style="margin-bottom: 1rem; color: #1a202c; font-weight: 600;">Request</h4>
+            <p class="doc-info-block" style="margin-bottom: 1rem;"><span style="color:#718096">POST</span>
+                /transcribe<br><span style="color:#718096">Body</span> (multipart/form-data)</p>
+
+            <table class="doc-table">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Required</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>audio</code></td>
+                        <td>file</td>
+                        <td>Yes</td>
+                        <td>The audio file to be transcribed. Recommended format is WAV.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 style="margin-bottom: 1rem; color: #1a202c; margin-top: 2rem; font-weight: 600;">Example request (curl)
+            </h4>
+            <div class="code-block">curl -X POST \
+                https://rudrakalariya-shrutilekhan-backend.hf.space/transcribe \
+                -H "Content-Type: multipart/form-data" \
+                -F "audio=@recording.wav"</div>
+
+            <h4 style="margin-bottom: 1rem; color: #1a202c; font-weight: 600;">Example response</h4>
+            <div class="code-block code-block-gray">{
+        "transcription": "નમસ્તે, તમે કેમ છો?"
+}</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p><strong>શ્રુતિલેખન</strong> - Gujarati Speech-to-Text</p>
+        <p class="copyright">&copy; 2026 ShrutiLekhan. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

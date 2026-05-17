@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShrutiLekhan - Gujarati Speech-to-Text</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;600;700&family=Baloo+Bhai+2:wght@600;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="background-container">
+        <!-- Background image is set in CSS on the ::before pseudo-element -->
+    </div>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <h1 class="logo-text">શ્રુતિલેખન</h1>
+            <div class="logo-subtext">Speech-to-Text<br>for Gujarati</div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="api/api.html">API</a>
+            <a href="about/about.html">About</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="glass-card">
+            <div class="card-header">
+                <h2><i class="fa-solid fa-microphone-lines"></i> Speech to Text</h2>
+            </div>
+            
+            <div class="audio-controls" id="audioControlsBlock">
+                <div class="input-actions" id="inputActions">
+                    <button id="recordBtn" class="btn record-btn">
+                        <i class="fa-solid fa-microphone"></i>
+                        <span id="recordText">Record Audio</span>
+                    </button>
+                    <div class="divider" id="inputDivider"><span>OR</span></div>
+                    <div class="upload-container" id="uploadContainer">
+                        <input type="file" id="audioUpload" accept="audio/*" class="hidden-input">
+                        <label for="audioUpload" class="btn outline-btn upload-btn">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> Upload File
+                        </label>
+                        <div class="file-info">
+                            <span id="fileName" class="file-name">No file selected</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-player hidden" id="audioPlayer">
+                    <button id="playPauseBtn" class="icon-btn play-btn" aria-label="Play/Pause">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <div id="waveform"></div>
+                </div>
+            </div>
+
+            <div class="recording-status hidden" id="recordingStatus">
+                <div class="recording-header">
+                    <div class="recording-indicators">
+                        <div class="pulse-ring"></div>
+                        <span class="recording-time" id="recordingTime">00:00</span>
+                        <span class="recording-label">Recording...</span>
+                    </div>
+                    <div class="recording-actions">
+                        <button id="pauseRecordBtn" class="btn outline-btn">
+                            <i class="fa-solid fa-pause"></i>
+                            <span id="pauseRecordText">Pause</span>
+                        </button>
+                        <button id="stopRecordBtn" class="btn record-btn">
+                            <i class="fa-solid fa-stop"></i> Stop
+                        </button>
+                    </div>
+                </div>
+                <canvas id="liveWaveform" width="400" height="60"></canvas>
+            </div>
+
+            <div class="output-container hidden" id="outputContainer">
+                <div class="output-header">
+                    <label for="transcriptionOutput">Transcribed Gujarati Text</label>
+                    <button class="icon-btn tooltip" id="copyBtn" aria-label="Copy Text">
+                        <i class="fa-regular fa-copy"></i>
+                        <span class="tooltip-text">Copy</span>
+                    </button>
+                </div>
+                <textarea id="transcriptionOutput" placeholder="Your Gujarati transcription will appear here..." readonly></textarea>
+            </div>
+
+            <div class="progress-container hidden" id="progressBarContainer">
+                <div class="progress-info">
+                    <span class="progress-status" id="progressStatusText">Processing audio...</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBarFill"></div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="clearBtn" class="btn secondary-btn">Clear</button>
+                <button id="submitBtn" class="btn primary-btn action-btn">Submit</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p><strong>શ્રુતિલેખન</strong> - Gujarati Speech-to-Text</p>
+        <p class="copyright">&copy; 2026 ShrutiLekhan. All rights reserved.</p>
+    </footer>
+
+    <!-- Wavesurfer.js for audio waveform -->
+    <script src="https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
